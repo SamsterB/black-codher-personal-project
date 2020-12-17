@@ -1,3 +1,8 @@
+.body .bg-dark {
+  background-color: black!important;
+}
+
+
 .App {
   text-align: center;
 }
