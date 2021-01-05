@@ -1,7 +1,15 @@
+img {
+  height: 100px;
+}
+
+
 .body .bg-dark {
   background-color: black!important;
 }
 
+body {
+  background-color: white!important;
+}
 
 .App {
   text-align: center;
