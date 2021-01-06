@@ -1,14 +1,29 @@
-import React from 'react'
+import React from 'react';
+import product_card from "../components/data/product_data";
 
 const Punches = () => {
+    console.log(product_card);
+    const listItems = product_card.map((item)=>
+        <div className="card" key={item.id}>
+            <div className="card_img">
+                <img src ={item.thumb} />
+            </div>
+            <div className="card_header">
+                <h2>{item.product_name}</h2>
+                <p>{item.description}</p>
+                <p className="price">{item.currency}<span>{item.price}</span></p>
+                <div className="btn">Add to cart</div>
 
-    return (
-        <div>
-            <h3> "The discipline of creating the finest Afro-Carribean punch blends."</h3>
-            
+            </div>
         </div>
+
     );
+    return(
+        <div className="main_content">
+            <h3>Punches</h3>
+            {listItems}
+        </div>
 
-};
-
+    )
+}
 export default Punches;
