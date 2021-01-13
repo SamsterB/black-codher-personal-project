@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 export default function Header() {
     return (
         <nav>
-            <div className="logo">Punchology</div>
+            <div>
+                <img src="/images/logo.jpg" alt=""/>
+            </div>
             <ul>
                 <li> <Link to='/'>Home</Link></li>
                 <li><Link to='/products'>Products</Link></li>
