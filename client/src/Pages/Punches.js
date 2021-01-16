@@ -5,17 +5,35 @@ import { totalCount } from "../components/totalCount";
 
 const Punches = () => {
     const [milkCount, setMilkCount] = useState(totalCount["Condense milk"]);
-    
+    const [pineappleCount, setPineappleCount] = useState(totalCount["Pineapple"]);
+    const [nurishmentCount, setNurishmentCount] = useState(totalCount["Nurishment"]);
+    const [agaveCount, setAgaveCount] = useState(totalCount["Agave"]);
+    const [oatCount, setOatCount] = useState(totalCount["Oat Milk"]);
+    console.log(guinnessCount);
+
+
+
     let pineappleMilk = product_card[0].ingredients["Condense milk"];
-    //console.log(milkCount);
+    let pineapplePineapple = product_card[0].ingredients["Pineapple"];
+    let pineappleNurishment = product_card[0].ingredients["Nurishment"];
+    let pineappleAgave = product_card[0].ingredients["Agave"];
+    let pineappleOat = product_card[0].ingredients["Oat Milk"];
+    //let guinnessGuinness = product_card[0].ingredients["Guinness"];
+    
+
+  
+    console.log(guinnessGuinness);
 
     const decreaseTotal = () => {
         setMilkCount(milkCount - pineappleMilk);
-       
+        setPineappleCount(pineappleCount-pineapplePineapple);
+        setNurishmentCount(nurishmentCount-pineappleNurishment);
+        setAgaveCount(agaveCount-pineappleAgave);
+        setOatCount(oatCount-pineappleOat);
+        //setGuinnessCount(guinnessCount-guinnessGuinness);
     }
     useEffect( () =>{
-        console.log(milkCount)
-    },[milkCount]) 
+    },[milkCount,pineappleCount,agaveCount,nurishmentCount,oatCount]) 
 
   console.log(product_card);
   

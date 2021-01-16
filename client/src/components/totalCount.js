@@ -5,4 +5,5 @@ export const totalCount ={
         "Agave": 80,
         "Guinness":50, 
         "Carrot":10,
+        "Oat Milk":20,
 }
