@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Punches from "./Pages/Punches";
 import About from "./Pages/About";
 import Footer from "./components/Footer";
-import Basket from "./components/Basket";
+//import Basket from "./components/Basket";
 import { useState } from 'react';
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
 
@@ -22,9 +22,9 @@ function App() {
           <Route path='/'>
             <Punches/>
           </Route>
-          <Route path='/'>
+          {/* <Route path='/'>
             <Basket>cartItems={cartItems}</Basket>
-          </Route>
+          </Route> */}
         </Switch>
         
         <Footer/>
