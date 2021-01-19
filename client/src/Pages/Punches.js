@@ -16,7 +16,8 @@ const Punches = () => {
     const [veganCount, setVeganCount] = useState(totalCount[" V Condense milk"]);
     const [boatCount, setBoatCount] = useState(totalCount["B Oat Milk"]);
     const [cocoCount, setCocoCount] = useState(totalCount["Coco Cream"]);
-    const [vpumpkinCount, setvpumpkinCount] = useState(totalCount["Pumpkin"]);
+    const [pumpkinCount, setPumpkinCount] = useState(totalCount["Pumpkin"]);
+    const [orangeCount, setOrangeCount] = useState(totalCount["Orange"]);
     //console.log(guinnessCount);
 
    //pineapple punch ingredients
@@ -46,7 +47,7 @@ const Punches = () => {
     let guinnessBottle = product_card[1].ingredients["Bottle"];
    
    
-   // function
+   //Guinness function
   //console.log("guinness stock count:" + guinnessMilk, guinnessGuinness, guinnessNurishment);
   const decreaseGuinnessTotal = () => {
 
@@ -60,7 +61,6 @@ const Punches = () => {
    //Carrot Punch ingredients
    let carrotMilk = product_card[2].ingredients["Condense milk"];
    let carrotCarrot = product_card[2].ingredients["Carrot"];
-   let carrotNurishment = product_card[2].ingredients["Nurishment"];
    let carrotBottle = product_card[2].ingredients["Bottle"];
 
    //function
@@ -68,7 +68,6 @@ const Punches = () => {
       
       setMilkCount(milkCount-carrotMilk);
       setCarrotCount(carrotCount-carrotCarrot);
-      setNurishmentCount(nurishmentCount-carrotNurishment);
       setBottleCount(bottleCount-carrotBottle);
   }  
 
@@ -103,7 +102,7 @@ const Punches = () => {
    const decreasevPumpkinTotal = () => {
       
       setVeganCount(veganCount-vpumpkinMilk);
-      setvpumpkinCount(vpumpkinCount-vpumpkinpumpkin);
+      setPumpkinCount(pumpkinCount-vpumpkinpumpkin);
       setGuinnessCount(guinnessCount-vpumpkinGuinness);
       setBoatCount(boatCount-vpumpkinBoatMilk);
       setCocoCount(cocoCount-vpumpkincococream);
@@ -113,11 +112,11 @@ const Punches = () => {
 
   //Vegan Guinness Punch ingredients
 
-   let vguinnessGuinness = product_card[4].ingredients["Guinness"];
-   let vguinnessBoatMilk =  product_card[4].ingredients["B Oat Milk"];
-   let vguinnesscococream = product_card[4].ingredients["Coco Cream"];
-   let vguinnessAgave = product_card[4].ingredients["Agave"];
-   let vguinnessBottle = product_card[4].ingredients["Bottle"];
+   let vguinnessGuinness = product_card[5].ingredients["Guinness"];
+   let vguinnessBoatMilk =  product_card[5].ingredients["B Oat Milk"];
+   let vguinnesscococream = product_card[5].ingredients["Coco Cream"];
+   let vguinnessAgave = product_card[5].ingredients["Agave"];
+   let vguinnessBottle = product_card[5].ingredients["Bottle"];
 
    //Vegan Guinness Function 
 
@@ -130,9 +129,50 @@ const Punches = () => {
       setAgaveCount(agaveCount-vguinnessAgave);
       setBottleCount(bottleCount-vguinnessBottle);
 
+   } 
+
+    //Pumpkin Punch Ingredients
+   let pumpkinPumpkin =  product_card[6].ingredients["Pumpkin"];
+   let pumpkinGuinness =  product_card[6].ingredients["Guinness"];
+   let pumpkinNurishment = product_card[6].ingredients["Nurishment"];
+   let pumpkinBottle = product_card[6].ingredients["Bottle"];
+
+   //Pumpkin Function 
+   const decreasepumpkinTotal = () => {
+      
+    setPumpkinCount(pumpkinCount-pumpkinPumpkin);
+    setGuinnessCount(guinnessCount-pumpkinGuinness);
+    setMilkCount(milkCount-pumpkinNurishment);
+    setBottleCount(bottleCount-pumpkinBottle);
+
+   }
+    
+  //Vegan Pineapple Punch Ingredients
+  let vpineapplePineapple = product_card[7].ingredients["Pineapple"];
+  let vpineappleorange = product_card[7].ingredients["Orange"];
+  let vpineapplecoco = product_card[7].ingredients["Coco Cream"];
+  let vcondensePineapple = product_card[7].ingredients["Coco Cream"];
+  let vpineappleBottle = product_card[7].ingredients["Bottle"];
+
+  //Vegan Pineapple Function 
+  const decreasevpineappleTotal = () => {
+      
+
+      setPineappleCount(pineappleCount-vpineapplePineapple);
+      setOrangeCount(orangeCount-vpineappleorange);
+      setCocoCount(cocoCount-vpineapplecoco);
+      setVeganCount(veganCount- vcondensePineapple)
+      setBottleCount(bottleCount-vpineappleBottle);
+      
+  }
 
 
-  }  
+
+
+
+
+
+  
    //console.log("carrot stock count:" + milkCount,pineappleCount,agaveCount,nurishmentCount,oatCount);
 
   
@@ -154,8 +194,17 @@ const Punches = () => {
       {decreaseCarrotTotal()}
       else if(id===3)
       {decreaseSeamossTotal()}
-      else  (id===4)
-      {decreasePumpkinTotal()}
+      else if (id===4)
+      {decreasevPumpkinTotal()}
+      else if (id===5)
+      {decreasevGuinnessTotal()}
+      else if (id===6)
+      {decreasepumpkinTotal()}
+      else 
+      {decreasevpineappleTotal()}
+      
+
+
     }
 
     useEffect( () =>{

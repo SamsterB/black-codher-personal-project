@@ -92,7 +92,7 @@ const product_card = [
       "Our unique blend of carrot and spices, with a rich creamy taste will leaving you wanting more.",
     price: 12.00,
     currency: "£",
-    thumb: "./images/5.jpeg",
+    thumb: "./images/6.jpeg",
     ingredients: {
       "Guinness":2,
       "B Oat milk":1,
@@ -101,6 +101,25 @@ const product_card = [
       "Bottle":1,
     } 
   },
+  {
+    id: 7,
+    product_name: "Vegan Pineapple Punch",
+    description:
+      "Our unique blend of carrot and spices, with a rich creamy taste will leaving you wanting more.",
+    price: 12.00,
+    currency: "£",
+    thumb: "./images/8.jpeg",
+    ingredients: {
+      "Pineapple":1,
+      "Orange":1,
+      "Coco Cream":1,
+      "V Condense Milk":1,
+      "Bottle":1,
+    } 
+  },
+  
+ 
+  
 
 
 ];

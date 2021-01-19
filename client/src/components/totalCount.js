@@ -12,4 +12,5 @@ export const totalCount ={
         "B Oat milk":10,
         "Coco cream":15, 
         "Pumpkin":50,
+        "Orange":5
 }
