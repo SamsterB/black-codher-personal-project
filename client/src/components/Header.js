@@ -15,7 +15,7 @@ export default function Header() {
                     <li><Link to='/contact'>Contact</Link></li>
                 </ul>
                 <div>
-                    <a href="#/cart">Cart</a>
+                    {/* <a href="#/cart">Cart</a> */}
                 </div>
             </header>
         </nav>

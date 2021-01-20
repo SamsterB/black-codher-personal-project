@@ -1,16 +1,14 @@
-//import "./App.css";
 import "./App.scss";
 import Header from "./components/Header";
 import Punches from "./Pages/Punches";
 import About from "./Pages/About";
 import Footer from "./components/Footer";
-//import Basket from "./components/Basket";
 import { useState } from 'react';
+import Login from './Pages/Login/Login';
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
 
 
 function App() {
-  const [cartItems, setCartItems] = useState ([]);
   return (
     <div className="container">
       <Router>
@@ -22,11 +20,8 @@ function App() {
           <Route path='/'>
             <Punches/>
           </Route>
-          {/* <Route path='/'>
-            <Basket>cartItems={cartItems}</Basket>
-          </Route> */}
+          <Route path='/Login'/>
         </Switch>
-        
         <Footer/>
       </Router>
     </div>

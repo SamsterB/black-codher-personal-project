@@ -1,3 +1,4 @@
+
 import React, { useCallback, useEffect, useState } from "react";
 import product_card from "../components/data/product_data";
 import { totalCount } from "../components/totalCount";
@@ -18,6 +19,7 @@ const Punches = () => {
     const [cocoCount, setCocoCount] = useState(totalCount["Coco Cream"]);
     const [pumpkinCount, setPumpkinCount] = useState(totalCount["Pumpkin"]);
     const [orangeCount, setOrangeCount] = useState(totalCount["Orange"]);
+    const [maltCount, setMaltCount] = useState(totalCount["Malt"]);
     //console.log(guinnessCount);
 
    //pineapple punch ingredients
@@ -151,7 +153,7 @@ const Punches = () => {
   let vpineapplePineapple = product_card[7].ingredients["Pineapple"];
   let vpineappleorange = product_card[7].ingredients["Orange"];
   let vpineapplecoco = product_card[7].ingredients["Coco Cream"];
-  let vcondensePineapple = product_card[7].ingredients["Coco Cream"];
+  let vcondensePineapple = product_card[7].ingredients["Condense Milk"];
   let vpineappleBottle = product_card[7].ingredients["Bottle"];
 
   //Vegan Pineapple Function 
@@ -166,11 +168,58 @@ const Punches = () => {
       
   }
 
+  //Vegan Carrot Punch
+  let vcarrotCarrot = product_card[8].ingredients["Carrot"];
+  let vcarrotOat = product_card[8].ingredients["Oat Milk"];
+  let vcarrotCoco = product_card[8].ingredients["Coco Cream"];
+  let vcarrotAgave = product_card[8].ingredients["Agave"];
+  let vcarrotBottle = product_card[8].ingredients["Bottle"];
+
+    const decreaseVcarrotTotal = () => {
+
+      setCarrotCount(carrotCount-vcarrotCarrot);
+      setOatCount(oatCount-vcarrotOat);
+      setCocoCount(cocoCount-vcarrotCoco);
+      setAgaveCount(agaveCount- vcarrotAgave)
+      setBottleCount(bottleCount-vcarrotBottle);
+  
+}
+
+// Alcohol Free Malt Punch ingredients
+let afmaltMalt = product_card[9].ingredients["Malt"];
+let afmaltCondense = product_card[9].ingredients["Condense Milk"];
+let afmaltNurishment = product_card[9].ingredients["Nurishment"];
+let afmaltBottle =  product_card[9].ingredients["Bottle"];
+
+//Malt Function 
+
+const decreaseMaltTotal = () => {
+
+  setMaltCount(maltCount-afmaltMalt);
+  setMilkCount(milkCount-afmaltCondense);
+  setNurishmentCount(nurishmentCount-afmaltNurishment);
+  setBottleCount(bottleCount-afmaltBottle);
 
 
+}
+//Vegan Malt punch ingredients 
+let afVmaltMalt = product_card[10].ingredients["Malt"];
+let afmaltVcondense = product_card[10].ingredients["V Condense Milk"];
+let afmaltOatMilk = product_card[10].ingredients["Oat Milk"];
+let afmaltCocoCream = product_card[10].ingredients["Coco Cream"];
+let afVmaltBottle =  product_card[10].ingredients["Bottle"];
 
+//Malt Function 
 
+const decreaseVeganMaltTotal = () => {
 
+  setMaltCount(maltCount-afVmaltMalt);
+  setVeganCount(veganCount-afmaltVcondense);
+  setBoatCount(boatCount-afmaltOatMilk);
+  setCocoCount(cocoCount-afmaltCocoCream);
+  setBottleCount(bottleCount-afVmaltBottle);
+
+}
 
   
    //console.log("carrot stock count:" + milkCount,pineappleCount,agaveCount,nurishmentCount,oatCount);
@@ -200,19 +249,13 @@ const Punches = () => {
       {decreasevGuinnessTotal()}
       else if (id===6)
       {decreasepumpkinTotal()}
-      else 
+      else if (id===7)
       {decreasevpineappleTotal()}
       else
       {decreaseVcarrotTotal()}
       
-
-
     }
-
-    useEffect( () =>{
-      buttonClick();
-    },[buttonClick])
-    console.log(milkCount,guinnessCount,nurishmentCount);
+    console.log(milkCount,guinnessCount,nurishmentCount,carrotCount,agaveCount,pumpkinCount,pineappleCount,seamossCount,orangeCount,oatCount,bottleCount,boatCount);
 
     //console.log("pineapple stock count:" + pineappleMilk,pineappleAgave,pineappleNurishment,pineappleOat);
   
@@ -231,7 +274,7 @@ const Punches = () => {
           {item.currency}
           <span>{item.price}</span>
         </p>
-        <div onClick={buttonClick()}className="btn">Add to cart</div>
+        <div onClick={()=> buttonClick(item.id)}className="btn">Add to cart</div>
       </div>
     </div>
   // if id ===0 run decrease pineapple function, if id === 1 run gin function, if id=== 2 run carrot function
