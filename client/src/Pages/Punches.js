@@ -202,6 +202,8 @@ const Punches = () => {
       {decreasepumpkinTotal()}
       else 
       {decreasevpineappleTotal()}
+      else
+      {decreaseVcarrotTotal()}
       
 
 
