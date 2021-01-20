@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
     return (
         <nav>
             <header className="row block centered">
@@ -13,9 +13,10 @@ export default function Header() {
                     <li><Link to='/products'>Products</Link></li>
                     <li><Link to='/about'>About Us</Link></li>
                     <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/Login'>Log In</Link></li>
                 </ul>
                 <div>
-                    {/* <a href="#/cart">Cart</a> */}
+                    <p>{props.count}</p>
                 </div>
             </header>
         </nav>

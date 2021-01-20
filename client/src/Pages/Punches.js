@@ -4,7 +4,7 @@ import product_card from "../components/data/product_data";
 import { totalCount } from "../components/totalCount";
 
 
-const Punches = () => {
+const Punches = (props) => {
     const [milkCount, setMilkCount] = useState(totalCount["Condense milk"]);
     const [bottleCount, setBottleCount] = useState(totalCount ["Bottle"])
     const [pineappleCount, setPineappleCount] = useState(totalCount["Pineapple"]);
@@ -21,7 +21,7 @@ const Punches = () => {
     const [orangeCount, setOrangeCount] = useState(totalCount["Orange"]);
     const [maltCount, setMaltCount] = useState(totalCount["Malt"]);
     //console.log(guinnessCount);
-
+    
    //pineapple punch ingredients
     let pineappleMilk = product_card[0].ingredients["Condense milk"];
     let pineapplePineapple = product_card[0].ingredients["Pineapple"];
@@ -283,6 +283,7 @@ const decreaseVeganMaltTotal = () => {
   return (
     <div className="main_content">
       <h3>Punches</h3>
+      <button onClick = {() => props.updateCount()}>Click Me</button>
       {listItems}
     </div>
   );
