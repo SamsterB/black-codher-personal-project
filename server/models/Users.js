@@ -2,9 +2,14 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  first_name: String,
-  last_name: String,
-  location: String,
+  id:Number,
+  product_name:String,
+  description:String,
+  price:Number,
+  currency:String,
+  thumb:String,
+  ingredients:Object
 });
 
-mongoose.model('users', userSchema);
+const Punches = mongoose.model('punches', userSchema);
+module.exports = Punches
