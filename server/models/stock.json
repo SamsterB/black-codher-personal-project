@@ -1,19 +1,22 @@
-[{ 
-    "Condense_milk":20,
-    "Pineapple":10,
-    "Nurishment":60,
-    "Agave":80,
-    "Guinness":50, 
-    "Carrot":10,
-    "Oat_Milk":20,
-    "Bottle":100,
-    "Seamoss":5,
-    "V_Condense_milk":25,
-    "B_Oat_milk":10,
-    "Coco_cream":15, 
-    "Pumpkin":50,
-    "Orange":5,
-    "Malt":20,
-    "Brown_bottle":50,
-    "Jar":50
-}]
+[
+  {
+    "ingredient": "Condense_milk",
+    "qty": 20
+  },
+  { "ingredient": "Pineapple", "qty": 10 },
+  { "ingredient": "Nurishment", "qty": 60 },
+  { "ingredient": "Agave", "qty": 80 },
+  { "ingredient": "Guinness", "qty": 50 },
+  { "ingredient": "Carrot", "qty": 10 },
+  { "ingredient": "Oat_Milk", "qty": 20 },
+  { "ingredient": "Bottle", "qty": 100 },
+  { "ingredient": "Seamoss", "qty": 5 },
+  { "ingredient": "V_Condense_milk", "qty": 25 },
+  { "ingredient": "B_Oat_milk", "qty": 10 },
+  { "ingredient": "Coco_cream", "qty": 15 },
+  { "ingredient": "Pumpkin", "qty": 50 },
+  { "ingredient": "Orange", "qty": 5 },
+  { "ingredient": "Malt", "qty": 20 },
+  { "ingredient": "Brown_bottle", "qty": 50 },
+  { "ingredient": "Jar", "qty": 50 }
+]

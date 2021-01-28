@@ -1,12 +1,13 @@
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, {useState } from "react";
 import product_card from "../components/data/product_data";
 import { totalCount } from "../components/totalCount";
+import Basket from "../components/Basket";
 
 
 const Punches = (props) => {
     const [milkCount, setMilkCount] = useState(totalCount["Condense milk"]);
-    const [bottleCount, setBottleCount] = useState(totalCount ["Bottle"])
+    const [bottleCount, setBottleCount] = useState(totalCount["Bottle"])
     const [pineappleCount, setPineappleCount] = useState(totalCount["Pineapple"]);
     const [nurishmentCount, setNurishmentCount] = useState(totalCount["Nurishment"]);
     const [agaveCount, setAgaveCount] = useState(totalCount["Agave"]);
@@ -20,6 +21,7 @@ const Punches = (props) => {
     const [pumpkinCount, setPumpkinCount] = useState(totalCount["Pumpkin"]);
     const [orangeCount, setOrangeCount] = useState(totalCount["Orange"]);
     const [maltCount, setMaltCount] = useState(totalCount["Malt"]);
+    const [basket,updateBasket]=useState({totalNumberofItems:0,items:[]});
     //console.log(guinnessCount);
     
    //pineapple punch ingredients
@@ -230,7 +232,20 @@ const decreaseVeganMaltTotal = () => {
     
     
     
-
+    //Update basket function 
+    const handleBasketUpdate = (id) => {
+      updateBasket({...basket,
+        totalNumberofItems:basket.totalNumberofItems+1,
+        items:[
+          ...basket.items,
+          {
+            id,
+            quantity:1
+          }
+        ]
+      })
+      console.log({basket});
+  }
 
    // Button click function
 
@@ -251,11 +266,18 @@ const decreaseVeganMaltTotal = () => {
       {decreasepumpkinTotal()}
       else if (id===7)
       {decreasevpineappleTotal()}
-      else
+      else if (id===8)
       {decreaseVcarrotTotal()}
+      else if (id===9)
+      {decreaseMaltTotal()}
+      else
+      {decreaseVeganMaltTotal()}
+      handleBasketUpdate(id);
       
     }
-    console.log(milkCount,guinnessCount,nurishmentCount,carrotCount,agaveCount,pumpkinCount,pineappleCount,seamossCount,orangeCount,oatCount,bottleCount,boatCount);
+    console.log({milkCount,guinnessCount,nurishmentCount,carrotCount,agaveCount,pumpkinCount,pineappleCount,seamossCount,orangeCount,oatCount,bottleCount,boatCount});
+
+    
 
     //console.log("pineapple stock count:" + pineappleMilk,pineappleAgave,pineappleNurishment,pineappleOat);
   
@@ -283,7 +305,8 @@ const decreaseVeganMaltTotal = () => {
   return (
     <div className="main_content">
       <h3>Punches</h3>
-      <button onClick = {() => props.updateCount()}>Click Me</button>
+      <Basket totalNumberofItems={basket.totalNumberofItems}/>
+      {/* <button onClick = {() => props.updateCount()}>Click Me</button> */}
       {listItems}
     </div>
   );

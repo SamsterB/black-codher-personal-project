@@ -3,18 +3,17 @@ import Header from "./components/Header";
 import Punches from "./Pages/Punches";
 import About from "./Pages/About";
 import Footer from "./components/Footer";
-import { useState } from 'react';
 import Login from "./Pages/Login/Login";
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
 
 
+
 function App() {
-  const [count,setcount]=useState(0)
-  const incCount =  () => {setcount(count+1)}
+  
   return (
     <div className="container">
       <Router>
-        <Header count = {count}/>
+        <Header/>
         <Switch>
           <Route path='/about'>
             <About/>
@@ -23,7 +22,7 @@ function App() {
             <Login/>
           </Route>
           <Route path='/'>
-            <Punches updateCount= {incCount}/>
+            <Punches/>
           </Route>
         </Switch>
         <Footer/>

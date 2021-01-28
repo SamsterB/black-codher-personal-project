@@ -1,6 +1,6 @@
-// import React from 'react';
+import React from 'react';
 
-// export default function Basket () {
-//     return <div></div>
+export default function Basket (props) {
+    return <div className="basket">total:{props.totalNumberofItems}</div>
 
-// }
+}

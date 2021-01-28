@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 // IMPORT YOUR MODELS
 require('./models/Users');
+require('./models/Stock')
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 
 // IMPORT YOUR ROUTES
 require('./routes/usersRoutes')(app);
+require('./routes/stockRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -15,9 +15,8 @@ export default function Header(props) {
                     <li><Link to='/contact'>Contact</Link></li>
                     <li><Link to='/Login'>Log In</Link></li>
                 </ul>
-                <div>
-                    <p>{props.count}</p>
-                </div>
+                
+                 
             </header>
         </nav>
     )

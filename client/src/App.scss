@@ -80,7 +80,7 @@ $white:#fff;
      justify-content: space-between;
      flex-wrap: wrap;
      h3{
-       position:absolute;
+       //position:absolute;
        left:0;
        top:0;
        color:$text;
@@ -173,8 +173,9 @@ $white:#fff;
         cursor:pointer;
         +.fa{
           margin-left:15px;
+
         }
       }
     }
   }
-
+.basket{color:white}
